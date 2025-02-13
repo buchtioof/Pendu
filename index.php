@@ -18,6 +18,12 @@ require_once("inc/poo.inc.php");
 // Après la question 7, vous pouvez faire un seul fichier index.php qui gère l'auto-soummission des requêtes. 
 // La démonstration en ligne utilise l'auto-soumission.
 
+$monDico=new MotsDico("./data/data.txt");
+$random= $monDico->getMot(rand(0,1023));
+
+$maVue=new VueMot($random);
+echo $maVue -> show();
+
 // Dans l'exemple donné ci-après, index reconnaît 3 ordres et agit en conséquence.
 $cmd="";
 if (isset($_GET) && isset($_GET['cmd']))
